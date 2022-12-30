@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let playerScore=0;
+    let computerScore=0;
+    let computerChoice=["paper","rock","scissors"];
+    let playerSelection=prompt("enter your choice","").toLowerCase;
+    let computerSelection=function getComputerChoice(){
+        return Math.floor(Math.random()*computerChoice.length());
+    }
+
+        function playRound(playerSelection,computerSelection){
+   
+        if(playerSelection=="rock"&&computerSelection=="rock"||
+        playerSelection=="paper"&&computerSelection=="paper"||
+        playerSelection=="scissors"&&computerSelection=="scissors"
+        ){ playerScore+=0;
+            computerScore+=0;
+            console.log("Tie");
+        }
+        if(playerSelection=="rock"&&computerSelection=="scissors"){
+            playerScore+=1;
+            computerScore+=0;
+            console.log("You win! Rock beats scissors")
+        } else if(playerSelection=="scissors"&&computerSelection=="paper"){
+            playerScore+=1;
+            computerScore+=0;
+            console.log("You win! Scissors beats paper");
+        } else if(playerSelection=="paper"&&computerSelection=="rock"){
+            playerScore+=1;
+            computerScore+=0;
+            console.log("You win! Paper beats rocks");
+        } else if(playerSelection=="rock"&&computerSelection=="paper"){
+            playerScore+=0;
+            computerScore+=1;
+            console.log("Computer wins! Paper beats rocks");
+        } else if(playerSelection=="paper"&&computerSelection=="scissors"){
+            playerScore+=0;
+            computerScore+=1;
+            console.log("Computer wins! scissors beat paper");
+        } else if(playerSelection="scissors"&&computerSelection=="rock"){
+            playerScore+=0;
+            computerScore+=1;
+            console.log("Computer wins! Rock beats scissors");
+        } 
+    }
+
+        function newGame(playRound){
+            for(let i=0;i<5;i++){
+                console.log(playRound());
+            }
+        }
+
+
+</script>
+    
+</body>
+</html>
