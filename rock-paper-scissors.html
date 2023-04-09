@@ -7,6 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="button-container">
+        <button id="rock">rock</button>
+        <button id="paper">paper</button>
+        <button id="scissors">scissors</button>
+    </div>
+    
+    <div>
+        <div class="playerScore">Player Score:</div>
+    <div class="computerScore">Computer Score:</div>
+</div>
+
 <script>
     let playerScore=0;
     let computerScore=0;
@@ -55,17 +66,23 @@
     
 
 function game(){
-    for(let i=1;i<=5;i++){
-        const playerSelection = prompt("enter your weapon");
+    while(true){
+        const playerSelection=prompt("Enter your choise:");
         const computerSelection=getComputerChoice();
-        playRound(playerSelection,computerSelection)
-        console.log(playRound(playerSelection,computerSelection))
-    }
-    return playerScore>computerScore?"Congratulations!You win!"
-    :playerScore==computerScore?"Tie"
-    :"Computer wins. Do you want to give it another go?";
+        console.log(`Computer choose ${computerSelection} and playerchoose ${playerSelection}`);
 
-}
+        console.log(playRound(playerSelection,computerSelection));
+        console.log(`computerScore is ${computerScore} vs playerScore is ${playerScore}`);
+
+        if(computerScore==5|| playerScore==5){
+            break;
+        }
+        }
+        return computerScore>playerScore?"Game over...Computer won.want to playagain?"
+        :computerScore==playerScore?"Game over... Tie"
+        :"Game over...You are the winner!"
+        
+    }
 
 console.log(game())
 
