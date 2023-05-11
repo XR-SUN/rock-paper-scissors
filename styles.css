@@ -1,0 +1,27 @@
+*{
+    text-align: center;
+    background-color: #EDC7b7;
+}
+
+h1{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-size-adjust:20px;
+    font-family: Varela Round
+    
+}
+
+.buttons{
+    text-align: center;
+
+}
+
+#rock{
+    background-color:#DA7b93
+}
+#paper{
+    background-color:#3b945E
+}
+#scissors{
+    background-color:#A1c3d1
+}

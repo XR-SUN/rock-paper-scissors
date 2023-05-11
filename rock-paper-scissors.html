@@ -5,88 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="button-container">
-        <button id="rock">rock</button>
-        <button id="paper">paper</button>
-        <button id="scissors">scissors</button>
+    <h1>ROCK PAPER SCISSORS</h1>
+    <div class="display">
+        <h2 class="displaychoice">0:0</h2>
+        <h2 class="result">Result:</h2>
+        <div class="displayScore">Player's score: 0 vs Computer's score:0</div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="buttons">
+        <button class ="weapon"id="rock">ROCK</button>
+        <button class="weapon" id="paper">PAPER</button>
+        <button class="weapon" id="scissors">SCISSORS</button>
     </div>
     
-    <div>
-        <div class="playerScore">Player Score:</div>
-    <div class="computerScore">Computer Score:</div>
-</div>
 
-<script>
-    let playerScore=0;
-    let computerScore=0;
-    function getComputerChoice(){
-        let computerChoice=["paper","rock","scissors"];
-        return computerChoice[Math.floor(Math.random()*computerChoice.length)];
-    }
+<script src="code.js" defer></script>
 
-        function playRound(playerSelection,computerSelection){
-   
-        if(playerSelection=="rock"&&computerSelection=="rock"||
-        playerSelection=="paper"&&computerSelection=="paper"||
-        playerSelection=="scissors"&&computerSelection=="scissors"
-        ){ playerScore+=0;
-            computerScore+=0;
-            return("Tie");
-        }
-        if(playerSelection=="rock"&&computerSelection=="scissors"){
-            playerScore+=1;
-            computerScore+=0;
-            return("You win! Rock beats scissors")
-        } else if(playerSelection=="scissors"&&computerSelection=="paper"){
-            playerScore+=1;
-            computerScore+=0;
-            return("You win! Scissors beats paper");
-        } else if(playerSelection=="paper"&&computerSelection=="rock"){
-            playerScore+=1;
-            computerScore+=0;
-            return("You win! Paper beats rocks");
-        } else if(playerSelection=="rock"&&computerSelection=="paper"){
-            playerScore+=0;
-            computerScore+=1;
-            return("Computer wins! Paper beats rocks");
-        } else if(playerSelection=="paper"&&computerSelection=="scissors"){
-            playerScore+=0;
-            computerScore+=1;
-            return("Computer wins! scissors beat paper");
-        } else if(playerSelection="scissors"&&computerSelection=="rock"){
-            playerScore+=0;
-            computerScore+=1;
-            return("Computer wins! Rock beats scissors");
-        } 
-    }
-
-
-    
-
-function game(){
-    while(true){
-        const playerSelection=prompt("Enter your choise:");
-        const computerSelection=getComputerChoice();
-        console.log(`Computer choose ${computerSelection} and playerchoose ${playerSelection}`);
-
-        console.log(playRound(playerSelection,computerSelection));
-        console.log(`computerScore is ${computerScore} vs playerScore is ${playerScore}`);
-
-        if(computerScore==5|| playerScore==5){
-            break;
-        }
-        }
-        return computerScore>playerScore?"Game over...Computer won.want to playagain?"
-        :computerScore==playerScore?"Game over... Tie"
-        :"Game over...You are the winner!"
-        
-    }
-
-console.log(game())
-
-</script>
-    
 </body>
 </html>
