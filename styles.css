@@ -1,27 +1,48 @@
 *{
     text-align: center;
     background-color: #EDC7b7;
+    font-family: Varela Round;
 }
 
 h1{
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding: 5%;
     text-size-adjust:20px;
-    font-family: Varela Round
-    
+}
+
+#container > .message{
+    padding-bottom: 10px;
+    font-size: 25px;
+}
+
+.player-score{
+    margin-right: 20px;
+}
+
+.computer-score{
+    margin-left:20px;
+}
+
+#container > .score {
+    display:flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-size: 25px;
 }
 
 .buttons{
     text-align: center;
-
 }
 
-#rock{
-    background-color:#DA7b93
+.buttons .weapon{
+    border:2px solid;
+    margin-top: 50px;
+    height:50px;
+    width:80px;
+    
 }
-#paper{
-    background-color:#3b945E
-}
-#scissors{
-    background-color:#A1c3d1
+
+.reset{
+    border:2px solid;
+    margin: 10px auto;
 }
